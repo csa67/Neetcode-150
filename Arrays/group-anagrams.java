@@ -4,6 +4,10 @@
   * constraints - all are in lowercase.
   */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 class Solution{
@@ -15,7 +19,7 @@ class Solution{
      */
     public List<List<String>> groupAnagrams(List<String> words){
 
-        Map<String,List<String>> anagramMap = new HashMap<>();
+        Map<String,ArrayList<String>> anagramMap = new HashMap<>();
         int[] counts = new int[26];
 
         for(String word: words){
@@ -25,17 +29,17 @@ class Solution{
                 counts[ch-'a']++;
             }
 
-            StringBuilder charAnagram = new StringBuilder<>();
+            StringBuilder charAnagram = new StringBuilder();
             for(int i=0; i<26;i++){
                 charAnagram.append('#');
                 charAnagram.append(counts[i]);
             }
 
-            charAnagram = charAnagram.toString();
-            if(!anagramMap.contains(charAnagram)){
-                anagramMap.put(charAnagram,new ArrayList<>());
+            String str = charAnagram.toString();
+            if(!anagramMap.containsKey(str)){
+                anagramMap.put(str,new ArrayList<>());
             }
-            anagramMap.get(charAnagram).add(word);
+            anagramMap.get(str).add(word);
         }
 
         return new ArrayList(anagramMap.values());

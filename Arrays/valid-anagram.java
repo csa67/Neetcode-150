@@ -7,6 +7,7 @@
   * case sensitive? yes.
   */
 
+import java.util.HashMap;
 import java.util.Map;
 
 class Solution{
@@ -33,7 +34,7 @@ class Solution{
 
      for(char ch:t.toCharArray()){
         if(characterFreqMap.containsKey(ch)){
-            char currentCount = characterFreqMap.get(ch);
+            int currentCount = characterFreqMap.get(ch);
             if(currentCount>1) characterFreqMap.put(ch,currentCount-1);
             else characterFreqMap.remove(ch);
         }else{

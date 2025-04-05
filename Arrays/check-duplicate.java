@@ -7,6 +7,9 @@
  * can I sort the array?
  */
 
+import java.util.HashSet;
+import java.util.Set;
+
 class DuplicateUtil{
     /*
      * Bruteforce: Linear search, finding if a particular value is in a list by checking each of its elements, one at a time and in sequence until the desired one is found.

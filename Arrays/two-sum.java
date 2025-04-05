@@ -10,6 +10,9 @@ You can return the answer in any order.
   * Constraints: 
   */
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution{
     /*
      * Bruteforce - 2 loops and check if the sum of 2 numbers is equal to target.

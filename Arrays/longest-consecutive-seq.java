@@ -8,6 +8,7 @@
   *can contain negative numbers.
   */
 
+import java.util.HashSet;
 import java.util.Set;
 
 class Solution{

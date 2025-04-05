@@ -7,7 +7,9 @@
  * Can multiple numbers have the same frequency?
  */
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 class Solution{
@@ -53,7 +55,7 @@ class Solution{
 
         for(int n:freqCount.keySet()){
             minHeap.add(n);
-            if(minHeap.size() > k) heap.poll();
+            if(minHeap.size() > k) minHeap.poll();
         }   //Always holds only k elements.
 
         int[] res = new int[k];

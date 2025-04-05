@@ -8,6 +8,7 @@ Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without
 Only validate the partially filled, not solvability.
  */
 
+import java.util.HashSet;
 import java.util.Set;
 
 class Solution {
@@ -88,7 +89,7 @@ class Solution {
                 if((cols[c] & pos) >0) return false;
                 cols[c] |= pos;
 
-                int idx=(r/3)*3+(col/3);
+                int idx=(r/3)*3+(c/3);
                 if((boxes[idx] & pos)>0) return false;
                 boxes[idx] |= pos;
             }
