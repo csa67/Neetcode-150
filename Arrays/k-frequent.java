@@ -7,7 +7,9 @@
  * Can multiple numbers have the same frequency?
  */
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -26,7 +28,7 @@ class Solution{
         }
 
         Queue<Integer> maxHeap = new PriorityQueue<>(
-            a,b -> freqCount.get(b) - freqCount.get(a)
+            (a,b) -> freqCount.get(b) - freqCount.get(a)
         );
         maxHeap.addAll(freqCount.keySet());
 
@@ -50,7 +52,7 @@ class Solution{
         }
 
         Queue<Integer> minHeap = new PriorityQueue<>(
-            a,b -> freqCount.get(a) - freqCount.get(b)
+            (a,b) -> freqCount.get(a) - freqCount.get(b)
         );
 
         for(int n:freqCount.keySet()){
@@ -84,20 +86,20 @@ class Solution{
             freqCount.put(i,freqCount.getOrDefault(i,0)+1);
         }
 
-        List<List<Integer>> buckets = new ArrayList(nums.length+1);
+        List<List<Integer>> buckets = new ArrayList<>(nums.length+1);
 
         for(int n:freqCount.keySet()){
            int freq = freqCount.get(n);
-           if(buckets[freq] == null){
-                buckets[freq] = new ArrayList<>();
+           if(buckets.get(freq) == null){
+                buckets.set(freq, new ArrayList<>());
            } 
-           buckets[freq].add(key);
+           buckets.get(freq).add(n);
         }  
 
         List<Integer> result = new ArrayList<>();
-        for (int i = buckets.length - 1; i >= 0 && result.size() < k; i--) {
-            if (buckets[i] != null) {
-                result.addAll(buckets[i]);
+        for (int i = buckets.size() - 1; i >= 0 && result.size() < k; i--) {
+            if (buckets.get(i) != null) {
+                result.addAll(buckets.get(i));
             }
         }
 
