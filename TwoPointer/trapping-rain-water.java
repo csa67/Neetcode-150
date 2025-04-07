@@ -52,7 +52,9 @@ class Solution  {
         return ans;
     }
     //TC - O(n), Space - O(n)
-
+    /*
+     * I don't need both right and left max, i'll only need the min of 2, so I use 2 pointer
+     */
     public int trappedRainingWater3(int[] nums){
         int n=nums.length;
         int ans=0;
