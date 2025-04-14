@@ -1,6 +1,7 @@
 package Trees;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -10,7 +11,7 @@ import java.util.Queue;
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
 
-        List<Integer> res = new ArrayList();
+        List<Integer> res = new ArrayList<>();
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
