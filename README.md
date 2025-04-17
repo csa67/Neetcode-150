@@ -1,6 +1,6 @@
-﻿# Neetcode-150
+ ![NeetCode Logo](https://img.shields.io/badge/Neetcode-150-blueviolet?style=for-the-badge)
 
-This repo has all the solutions for Neetcode 150 implemented in Java.
+This repo contains **Java** implementations for the Neetcode 150 problems categorized.
 
 **Arrays**
 - [Contains Duplicate](Arrays/check-duplicate.java)
